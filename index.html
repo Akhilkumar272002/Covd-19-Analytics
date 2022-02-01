@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <title>Home</title>
+</head>
+
+<body>
+  <div class="container topContainer">
+    <div class="row">
+      <div class="text-center">
+        <h5 class="headTitle"><svg viewBox="0 0 960 300">
+	<symbol id="s-text">
+		<text text-anchor="middle" x="50%" y=80%>Covid-19 Analytics</text>
+	</symbol>
+
+	<g class = "g-ants">
+		<use xlink:href="#s-text" class="text-copy"></use>
+		<use xlink:href="#s-text" class="text-copy"></use>
+		<use xlink:href="#s-text" class="text-copy"></use>
+		<use xlink:href="#s-text" class="text-copy"></use>
+		<use xlink:href="#s-text" class="text-copy"></use>
+	</g>
+</svg>
+</h5>
+      </div>
+      <div class="col-lg-12 text-center">
+        <div class="card selectCard">
+          <h5>Select your state</h5>
+          <div class="card-body">
+            <select id="state" class="state" name="state" onchange="getTotalCases()">
+              <option selected="selected" value="India">India</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row graphStats">
+      <div class="col-lg-7">
+        <div class="card graphCard" id="myChartContainer">
+          <div class="card-body">
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="card statsCard text-center">
+          <h5>Current <span> Analytics</span></h5>
+          <div class="card-body">
+            <div class="confirmed">
+              <ul>
+                <li>
+                  <h6><i class="fa fa-check-square-o"></i> Confirmed</h6>
+                </li>
+                <li>
+                  <p id="confirmed"></p>
+                </li>
+              </ul>
+            </div>
+            <div class="active">
+              <ul>
+                <li>
+                  <h6><i class="fa fa-dot-circle-o"></i> Active</h6>
+                </li>
+                <li>
+                  <p id="active"></p>
+                </li>
+              </ul>
+            </div>
+            <div class="recovered">
+              <ul>
+                <li>
+                  <h6><i class="fa fa-thumbs-o-up"></i> Recovered</h6>
+                </li>
+                <li>
+                  <p id="recovered"></p>
+                </li>
+              </ul>
+            </div>
+            <div class="death">
+              <ul>
+                <li>
+                  <h6><i class="fa fa-frown-o"></i> Death</h6>
+                </li>
+                <li>
+                  <p id="death"></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row slotAvailability align-items-center">
+      <div class="text-center">
+        <h5 class="headTitle">COVID-19 Slots 🇮🇳</h5>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img class="img-fluid SlotImg" src="./images/slotImage.svg">
+      </div>
+      <div class="col-lg-6 text-left slotInfo">
+        <p><i class="fa fa-check"></i>Check Your nearest Vaccination center And slots availability</p>
+        <p><i class="fa fa-check"></i>Check current availability of vaccination for your prefered date</p>
+        <p><i class="fa fa-check"></i>Check current availability of vaccination slots for Dose 1 & 2</p>
+        <p><i class="fa fa-check"></i>Check availability based on type of Vaccine & Fee type</p>
+        <div class="slotButton">
+          <button onclick="window.location.href = './Slot-Availability-Check';" class="btn btn-primary btnStyle">
+            Check Slot Availability
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center align-items-center">
+      <div class="text-center">
+        <h5 class="headTitle">COVID-19 Info 🇮🇳</h5>
+      </div>
+      <div class="col-lg-3">
+        <div class="card shadow infoCard">
+          <div class="card-body">
+            <i class="fa fa-hospital-o"></i>
+            <p>COVID-19</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card shadow infoCard">
+          <div class="card-body">
+            <i class="fa fa-medkit"></i>
+            <p>Vaccine</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card shadow infoCard">
+          <div class="card-body">
+            <i class="fa fa-heart-o"></i>
+            <p>Safety & Prevention</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card shadow infoCard">
+          <div class="card-body">
+            <i class="fa fa-stethoscope"></i>
+            <p>Symptoms</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center copyrightSection">
+      <div class="bottom-align-text col-lg-12">
+        <p class="copyright">Made for easy Covid-19 Analytics 
+        </p>
+        <p class="copyright">©Designed, Developed & Maintained by <a href="https://www.linkedin.com/in/s-t-akhil-kumar"
+            target="blank">S.T Akhil kumar<a></a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+  <script type="text/javascript" src="./js/script.js"></script>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  
+</body>
+
+</html>
