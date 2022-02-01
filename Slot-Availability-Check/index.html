@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../Slot-Availability-Check/css/style.css" />
+  <title>Covid-19 Slot Availability check</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-lg-12">
+        <div class="card shadow card1">
+          <div class="card-body">
+            <h3>It's your <span>turn!</span></h3>
+            <form class="text-center">
+              <div class="mb-3">
+                <label class="form-label">Your prefered Vaccination Date</label>
+                <input type="date" class="form-control datepicker" id="DateVaccinationSlot" placeholder="dd-mm-yyyy"
+                  required />
+              </div>
+              <div class="mb-3">
+                <label for="state">Select Your State</label>
+                <br>
+                <select id="state" class="state" name="state" onchange="getDistrictData()">
+                  <option selected="selected">Select State</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="district">Select Your District</label>
+                <br>
+                <select id="district" class="district" name="district"></select>
+              </div>
+              <div class="mb-3">
+                <label for="dose">Dose</label>
+                <br>
+                <select id="dose" class="dose" name="dose">
+                  <option value="dose1">Dose 1</option>
+                  <option value="dose2">Dose 2</option>
+                </select>
+              </div>
+              <button type="submit" onclick="getAvailableSlots();" class="btn btn-primary btnStyle">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card shadow card2">
+          <div class="card-body table-responsive">
+            <table class="table table-hover table-borderless table-striped table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Available</th>
+                  <th scope="col">
+                    <select id="filterFeeType" onchange="filter()">
+                      <option disabled selected>Fee Type</option>
+                      <option value="all">All</option>
+                      <option value="Free">Free</option>
+                      <option value="Paid">Paid</option>
+                    </select>
+                  </th>
+                  <th scope="col">Cost</th>
+                  <th scope="col">
+                    <select id="filterVaccineType" onchange="filter()">
+                      <option disabled selected>Vaccine Type</option>
+                      <option value="all">All</option>
+                      <option value="COVISHIELD">Covishield</option>
+                      <option value="COVAXIN">Covaxin</option>
+                      <option value="SPUTNIK V">Sputnik V</option>
+                    </select>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="tableBody"></tbody>
+            </table>
+            <div id="noslots" class="text-center">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="bottom-align-text col-lg-12">
+        <p class="copyright">Made for easy Covid-19 Analytics</p>
+        
+        <p class="copyright">© Designed, Developed & Maintained by <a href="https://www.linkedin.com/in/s-t-akhil-kumar"
+          target="blank">S.T Akhil kumar<a></a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../Slot-Availability-Check/js/state&districts.js"></script>
+  <script type="text/javascript" src="../Slot-Availability-Check/js/slots.js"></script>
+  <script type="text/javascript" src="../Slot-Availability-Check/js/filters.js"></script>
+  
+</body>
+
+</html>

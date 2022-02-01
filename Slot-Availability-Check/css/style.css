@@ -1,0 +1,105 @@
+body{
+    background-color: #212528;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card1{
+    margin-top: 50px;
+    border-radius: 15px;
+    border: none;
+    background-color: #2A2E31;
+}
+
+.card1 h3{
+    font-size: 50px;
+    font-weight: 800;
+    color: #ffffff;
+}
+.card1 h3 span{
+    color: #1EB955;
+}
+
+.card1 form label{
+    margin-top: 10px;
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.datepicker{
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.district{
+    background-color: #ffffff;
+    border: none;
+    height: 30px;
+    width: 250px;
+}
+
+.state{
+    background-color: #ffffff;
+    border: none;
+    height: 30px;
+    width: 250px;
+}
+
+.dose{
+    background-color: #ffffff;
+    border: none;
+    height: 30px;
+    width: 250px;
+}
+
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+ }
+
+.btnStyle{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to right, #137735, #1EB955);
+    width: 250px;
+    border: none;
+    border-radius: 50px;
+}
+
+.card2{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    border: none;
+    background-color: #2A2E31;
+}
+
+.card2 table{
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+.card2 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th{
+    background-color: #1EB955;
+}
+
+.copyright{
+    color: #ffffff;
+    font-size: small;
+}
+
+#noSlotAvailable{
+    color: #ffffff;
+}
+
+.noSlotImg{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 20%;
+    height: 20%;
+    align-items: center;
+}
